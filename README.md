@@ -37,3 +37,4 @@ Modificar Teléfono: Permite actualizar el teléfono de un contacto existente, b
 
 Espacios Libres: Muestra cuántos contactos más se pueden ingresar en la agenda.
 
+Integrantes: Lilia Berenice Rivas Sánchez, Angel Tirado Luna, Saúl G. Esquiliano Soto y Jesús Jaime Covarruvias.
