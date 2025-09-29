@@ -1,35 +1,39 @@
-Proyecto: Agenda Telefónica Interactiva en Java (OOP)
-Este proyecto es una implementación completa de un sistema de gestión de agenda telefónica, diseñado para demostrar los principios fundamentales de la Programación Orientada a Objetos (POO) y el manejo de colecciones en Java.
+📖 Proyecto: Agenda Telefónica Interactiva en Java (OOP)
+Este proyecto implementa un sistema de gestión de agenda telefónica diseñado para consolidar los pilares de la Programación Orientada a Objetos (POO) y el manejo de colecciones en un entorno de aplicación interactiva por consola.
 
-La aplicación permite al usuario interactuar a través de la consola para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una lista de contactos con capacidad limitada.
+🛠️ Arquitectura y Diseño POO
+El sistema está dividido en módulos (clases) con responsabilidades únicas, siguiendo el Principio de Responsabilidad Única (SRP):
 
-🛠️ Conceptos Clave Implementados
-La arquitectura del proyecto se basa en los pilares de POO y estructuras de control:
+Clase / Módulo	Responsabilidad Principal	Conceptos POO Aplicados
+Contacto	Representa una entidad de datos (Nombre, Apellido, Teléfono).	Encapsulamiento, Polimorfismo (equals() y toString()).
+Agenda	Lógica de Negocio. Administra la colección de contactos.	Abstracción, Control de Capacidad (tamaño máximo).
+AgendaTest	Interfaz de Usuario y Control de Flujo.	Interacción por Consola (Scanner), Control de Flujo (do-while, switch), Manejo de Errores (try-catch).
 
-Clases y Objetos: Se utilizan las clases Contacto y Agenda para modelar las entidades del sistema.
+EXPORTAR A HOJAS DE CÁLCULO
+✨ Conceptos Clave Implementados
+1. Encapsulamiento y Modelado
+Todos los atributos (nombre, apellido, telefono, contactos, maxCapacity) son privados (private), protegiendo la integridad de los datos.
 
-Encapsulamiento: Los atributos de los contactos (nombre, apellido, telefono) son privados y se acceden mediante Getters y Setters.
+El acceso y la modificación se realizan únicamente a través de métodos públicos (getNombre(), setTelefono()).
 
-Polimorfismo (Sobreescritura): El método equals() en la clase Contacto ha sido sobreescrito para asegurar que la agenda no permita contactos con nombres duplicados, aplicando una regla de negocio específica.
+2. Polimorfismo: Regla de Negocio
+El método equals(Object obj) en Contacto fue sobreescrito para implementar la regla de unicidad del negocio: dos contactos se consideran iguales si tienen el mismo nombre, ignorando mayúsculas/minúsculas.
 
-Abstracción/Diseño Modular:
+3. Colecciones y Estructura
+Se utiliza un ArrayList<Contacto> dentro de la clase Agenda para almacenar la colección de objetos.
 
-La clase Agenda gestiona la lógica de negocio (añadir, buscar, eliminar).
-
-La clase AgendaTest (o AgendaManager) maneja la interfaz de menú interactivo con el usuario, utilizando un bucle do-while y un switch.
-
-Estructuras de Datos: Se utiliza un ArrayList para almacenar el conjunto de contactos, con lógica implementada para controlar la capacidad máxima de la agenda (por defecto 10).
-
-Manejo de Errores: Se utiliza try-catch para capturar y manejar el NumberFormatException cuando el usuario ingresa datos incorrectos en el menú de opciones.
+Se implementa la lógica de capacidad máxima (maxCapacity y espaciosLibres()), cumpliendo con el requerimiento de tamaño limitado.
 
 🚀 Funcionalidades Principales
-Añadir Contacto: Permite añadir un contacto, validando que la agenda no esté llena y que el nombre no exista.
+El menú interactivo en la consola permite al usuario realizar las siguientes operaciones:
 
-Buscar Contacto: Permite buscar por Nombre y Apellido y muestra el teléfono.
+Añadir Contacto: Valida la capacidad máxima y evita la adición de contactos duplicados (por nombre).
 
-Eliminar Contacto: Elimina el contacto especificado por nombre y apellido.
+Buscar Contacto: Permite la búsqueda precisa utilizando el Nombre y Apellido del contacto.
 
-Modificar Teléfono: Permite actualizar el teléfono de un contacto existente.
+Eliminar Contacto: Elimina el contacto especificado por su nombre completo, informando al usuario si la operación fue exitosa o fallida.
 
-Listar y Espacios Libres: Muestra todos los contactos guardados e indica la capacidad restante.
+Modificar Teléfono: Permite actualizar el teléfono de un contacto existente, buscándolo por su nombre completo.
+
+Espacios Libres: Muestra cuántos contactos más se pueden ingresar en la agenda.
 
